@@ -8,5 +8,6 @@ public interface ValidationCostants {
  String MISSING_MED_CODE="Medication code is missing";
  String MED_CODE_REGEXP="^[A-Z0-9_]*$";
  String WRONG_MED_CODE="Wrong medication code";
+ String DRONE_ALREADY_EXISTS="Drone already exists";
 
 }

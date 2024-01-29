@@ -22,6 +22,6 @@ public class Drone {
 		return new Drone(droneDto.number(), null, 100, State.IDLE);
 	}
 	public DroneDto build() {
-		return new DroneDto(number, model.getModelName());
+		return new DroneDto(number, model.getModel());
 	}
 }
