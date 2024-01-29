@@ -33,9 +33,10 @@ DroneDto droneDto1=new DroneDto("22222", model1);
 DroneDto droneDto2=new DroneDto("22222", model1);
 
 @Test
-void testRegisterDrone(DroneDto droneDto)throws Exception {
+void testRegisterDrone()throws Exception {
+	
 	when(dronesService.registerDrone(droneDto)).thenReturn(droneDto);
-	String jsonDroneDto = mapper.writeValueAsString(droneDto); //conversion from carDto object to string JSON
+	String jsonDroneDto = mapper.writeValueAsString(droneDto); 
 	String actualJSON = mockMvc.perform(post("http://localhost:8080/drones").contentType(MediaType.APPLICATION_JSON)
 			.content(jsonDroneDto)).andExpect(status().isOk()).andReturn().getResponse()
 	.getContentAsString();
@@ -43,7 +44,8 @@ void testRegisterDrone(DroneDto droneDto)throws Exception {
 	
 }
 @Test
-void testLoadDrone(DroneMedication droneMedication) throws Exception{
+void testLoadDrone() throws Exception{
+	DroneMedication droneMedication=new DroneMedication("11111", "11111");
 	when(dronesService.loadDrone(droneMedication)).thenReturn(droneMedication);
 	String jsonDroneMedication=mapper.writeValueAsString(droneMedication);
 	String actualJson=mockMvc.perform(put("http://localhost:8080/drones").contentType(MediaType.APPLICATION_JSON).content(jsonDroneMedication)).andExpect(status().isOk()).andReturn().getResponse()

@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotEmpty;
 
 
 //TODO add validation constraints
-public record DroneDto(@NotEmpty(message=MISSING_DRONE_NUMBER)@Pattern(regexp=DRONE_NUMBER_REGEXP,message= WRONG_DRONE_NUMBER)String number,@NotEmpty(message=MISSING_DRONE_MODEL)ModelType modelType) {
+public record DroneDto(@NotEmpty(message=MISSING_DRONE_NUMBER)@Pattern(regexp=DRONE_NUMBER_REGEXP,message= WRONG_DRONE_NUMBER)String number,@NotNull(message=MISSING_DRONE_MODEL)ModelType modelType) {
 	@Override
 	public int hashCode() {
 		return Objects.hash(number);
