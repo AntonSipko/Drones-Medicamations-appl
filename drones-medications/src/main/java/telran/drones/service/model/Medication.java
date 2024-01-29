@@ -1,4 +1,4 @@
-package telran.drones.model;
+package telran.drones.service.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

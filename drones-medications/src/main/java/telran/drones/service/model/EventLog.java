@@ -1,4 +1,4 @@
-package telran.drones.model;
+package telran.drones.service.model;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;

@@ -18,6 +18,7 @@ import telran.drones.exceptions.IllegalDronesStateException;
 import telran.drones.repo.DroneModelRepo;
 import telran.drones.repo.DroneRepo;
 import telran.drones.repo.MedicationRepo;
+import telran.drones.service.model.DroneModel;
 
 
 @Service
@@ -33,7 +34,7 @@ public class DronesServiceImpl implements DronesService {
 		if(droneRepo.existsById(droneDto.number())) {
 			throw new IllegalDronesStateException();
 		}
-		DroneModel model = DroneModelRepo.findById(new DroneModel(droneDto.model(), carDto.year()))
+		DroneModel model = DroneModelRepo.findById(new ModelWeight(droneDto.number(), droneDto.modelType()))
 				.orElseThrow(() -> new ModelNotFoundException());
 		Car car = Car.of(carDto);
 		car.setModel(model);

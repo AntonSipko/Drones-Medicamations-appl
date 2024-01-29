@@ -1,4 +1,4 @@
-package telran.drones.model;
+package telran.drones.service.model;
 import jakarta.persistence.*;
 import telran.drones.dto.DroneDto;
 import telran.drones.dto.ModelType;
@@ -11,8 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 public class DroneModel {
 	@Id
-	@Enumerated(EnumType.STRING)
-    ModelType model;
-	int weight;
+    ModelWeight modelWeight;
+	ModelType modelType;
 	
 }

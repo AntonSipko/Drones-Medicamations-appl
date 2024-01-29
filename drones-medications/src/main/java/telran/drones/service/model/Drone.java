@@ -1,4 +1,4 @@
-package telran.drones.model;
+package telran.drones.service.model;
 import jakarta.persistence.*;
 import lombok.*;
 import telran.drones.dto.DroneDto;
@@ -22,6 +22,6 @@ public class Drone {
 		return new Drone(droneDto.number(), null, 100, State.IDLE);
 	}
 	public DroneDto build() {
-		return new DroneDto(number, model.getModel());
+		return new DroneDto(number,model.modelType);
 	}
 }
